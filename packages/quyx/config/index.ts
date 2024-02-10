@@ -107,8 +107,7 @@ export const defineConfig = (baseOptions: ConfigOptions = {}) => {
                             }
                         })
                     ]
-                },
-                base: "/_server"
+                }
             },
             ...(isServerFunctionsEnabled ?
                 [serverFunctions.router({

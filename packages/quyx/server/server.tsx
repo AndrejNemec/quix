@@ -47,6 +47,7 @@ export const createServerHandler = (handler: ServerHandler) => {
 		const result = await handler(router, event)
 		const Wrapper = import.meta.env.QUIX_SSR ? PassThrought : SPAWrapper
 
+
 		const stream = await new Promise<PipeableStream>(async (resolve) => {
 			const stream = renderToPipeableStream((
 				<QuyxProvider assets={assets} router={router}>
