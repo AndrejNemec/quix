@@ -16,6 +16,7 @@ const routerEntry = quyxRouter as RouterHandler<AnyRouter>
 
 //@ts-expect-error
 import appComponent from '#quyx/app'
+import { PassThroughtStrictMode } from "../shared/PassThroughtStrictMode";
 const AppComponent = appComponent as ComponentType<PropsWithChildren>
 
 export type ServerHandler = (router: AnyRouter, event: H3Event<EventHandlerRequest>) => Promise<ReactNode>
@@ -50,13 +51,15 @@ export const createServerHandler = (handler: ServerHandler) => {
 
 		const stream = await new Promise<PipeableStream>(async (resolve) => {
 			const stream = renderToPipeableStream((
-				<QuyxProvider assets={assets} router={router}>
-					<AppComponent>
-						<Wrapper>
-							{result}
-						</Wrapper>
-					</AppComponent>
-				</QuyxProvider>
+				<PassThroughtStrictMode>
+					<QuyxProvider assets={assets} router={router}>
+						<AppComponent>
+							<Wrapper>
+								{result}
+							</Wrapper>
+						</AppComponent>
+					</QuyxProvider>
+				</PassThroughtStrictMode>
 			), {
 				onShellReady() {
 					resolve(stream)

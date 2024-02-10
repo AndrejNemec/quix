@@ -16,7 +16,9 @@ export interface ConfigOptions extends Omit<CustomizableConfig, 'plugins'> {
             //serverComponents?: boolean
         }
     }
-    react?: ReactOptions
+    react?: ReactOptions & {
+        strictMode?: boolean
+    }
     plugins?: ClientRouterSchema['plugins']
 }
 
@@ -31,7 +33,7 @@ const defaultConfigOptions: ConfigOptions['quyx'] = {
 }
 
 export const defineConfig = (baseOptions: ConfigOptions = {}) => {
-    let { plugins = [], quyx = {}, react: reactOptions, ...userConfig } = baseOptions;
+    let { plugins = [], quyx = {}, react: { strictMode: reactStrictMode = true, ...reactOptions } = {}, ...userConfig } = baseOptions;
     quyx = defu(quyx, defaultConfigOptions)
     const isSsrEnabled: boolean = quyx.ssr
     const isServerFunctionsEnabled: boolean = quyx.features?.serverFunctions ?? true
@@ -83,6 +85,7 @@ export const defineConfig = (baseOptions: ConfigOptions = {}) => {
                             },
                             define: {
                                 "import.meta.env.SSR": JSON.stringify(false),
+                                "import.meta.env.REACT_STRICT_MODE": JSON.stringify(reactStrictMode),
                                 "import.meta.env.QUIX_SSR": JSON.stringify(isSsrEnabled),
                                 "import.meta.env.SERVER_BASE_URL": JSON.stringify(quyx?.server?.baseURL ?? ""),
                                 ...userConfig.define
@@ -123,6 +126,7 @@ export const defineConfig = (baseOptions: ConfigOptions = {}) => {
                             },
                             define: {
                                 "import.meta.env.SSR": JSON.stringify(true),
+                                "import.meta.env.REACT_STRICT_MODE": JSON.stringify(reactStrictMode),
                                 "import.meta.env.QUIX_SSR": JSON.stringify(isSsrEnabled),
                                 "import.meta.env.SERVER_BASE_URL": JSON.stringify(quyx?.server?.baseURL ?? ""),
                                 ...userConfig.define
@@ -159,6 +163,7 @@ export const defineConfig = (baseOptions: ConfigOptions = {}) => {
                                 },
                                 define: {
                                     "import.meta.env.SSR": JSON.stringify(true),
+                                    "import.meta.env.REACT_STRICT_MODE": JSON.stringify(reactStrictMode),
                                     "import.meta.env.QUIX_SSR": JSON.stringify(isSsrEnabled),
                                     ...userConfig.define
                                 }
