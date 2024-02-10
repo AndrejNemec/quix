@@ -1,6 +1,6 @@
 {
   "name": "quyx",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "type": "module",
   "author": "Andrej Nemec",
   "license": "MIT",
@@ -57,7 +57,7 @@
     "defu": "^6.1.4"
   },
   "devDependencies": {
-    "@tanstack/react-router": "^1.15.23",
+    "@tanstack/react-router": "^1.16.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "react": "0.0.0-experimental-035a41c4e-20230704",

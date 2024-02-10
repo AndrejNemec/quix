@@ -1,4 +1,5 @@
 # Quyx ("kwix") 🚀
+[![NPM Version](https://img.shields.io/npm/v/quyx.svg?style=for-the-badge)](https://www.npmjs.com/package/quyx)
 
 Quyx, pronounced "kwix", is a cutting-edge React framework designed to simplify the development process for web applications. Leveraging the power of Vite, Vinxi, and tanstack/router, Quyx is engineered to support a wide range of web applications, from server-side rendered (SSR) to single-page applications (SPA) 🌐. It also introduces support for Server Functions, allowing for a more integrated and efficient development workflow 🛠️.
 
