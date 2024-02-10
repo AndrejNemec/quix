@@ -1,5 +1,5 @@
 import { Meta, Scripts } from 'quyx'
-import type { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 interface AppProps {
     children: ReactNode

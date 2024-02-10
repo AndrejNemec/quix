@@ -23,6 +23,11 @@ export const createClient = async (renderer: ClientRenderer) => {
 	const clientManifest = getManifest("client");
 	const assets = await clientManifest.inputs[clientManifest.handler].assets() as unknown as HTMLTag[];
 	const router = await routerEntry({ isServer: false, currentPath: window.location.pathname })
+
+	if (import.meta.env.QUIX_SSR) {
+		await router.load()
+	}
+
 	const result = await renderer(router)
 
 	if (import.meta.env.QUIX_SSR) {

@@ -19,12 +19,13 @@ export const QuyxContext = createContext<ServerContextType>({} as ServerContextT
 export const useQuyxContext = () => useContext(QuyxContext)
 
 export const QuyxProvider = ({ children, assets, router }: Omit<ServerContextType, 'dehydrated'>) => {
-    if (import.meta.env.QUIX_SSR && typeof window !== 'undefined' && !router.state.lastUpdated) {
-        router.hydrate()
-    }
     const dehydrated = React.useMemo(() => {
-        if (typeof window !== 'undefined' || !import.meta.env.QUIX_SSR) {
+        if (!import.meta.env.QUIX_SSR) {
             return
+        }
+
+        if (typeof window !== 'undefined') {
+            return undefined
         }
         
         return ({
@@ -38,7 +39,7 @@ export const QuyxProvider = ({ children, assets, router }: Omit<ServerContextTyp
             assets,
             router,
             children,
-            dehydrated
+            dehydrated: dehydrated || router.dehydratedData
         }}>
             {children}
         </QuyxContext.Provider>

@@ -3,7 +3,7 @@ import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 
 export default defineConfig({
     quyx: {
-        ssr: false
+        ssr: true
     },
     plugins: [TanStackRouterVite()],
     resolve: {
