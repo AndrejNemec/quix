@@ -14,8 +14,8 @@ Quyx, pronounced "kwix", is a cutting-edge React framework designed to simplify 
 
 To create a new Quyx project, run the following command:
 
-\`\`\`bash
+```bash
 $ pnpm create quyx-starter
-\`\`\`
+```
 
 This command sets up a new Quyx application with a default template, so you can start building right away 🏗️.
