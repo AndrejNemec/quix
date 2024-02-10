@@ -1,12 +1,7 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
-    component: IndexPage,
-    meta: () => [
-        {
-            title: 'Home'
-        }
-    ]
+    component: IndexPage
 })
 
 

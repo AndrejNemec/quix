@@ -26,7 +26,7 @@ const defaultConfigOptions: ConfigOptions['quyx'] = {
     server: {},
     features: {
         serverFunctions: true,
-       // serverComponents: true
+        // serverComponents: true
     }
 }
 
@@ -58,12 +58,23 @@ export const defineConfig = (baseOptions: ConfigOptions = {}) => {
                 target: "browser",
                 plugins: async () => {
                     return [
-                        config("user", userConfig),
+                        config("user", {
+                            ...userConfig,
+                            optimizeDeps: {
+                                ...(userConfig.optimizeDeps || {}),
+                                exclude: [
+                                    ...(userConfig.optimizeDeps?.exclude || []),
+                                    '#quyx/app',
+                                    '#quyx/router'
+                                ]
+                            }
+                        }),
                         ...(typeof plugins === "function" ? [...(await (plugins as any)())] : plugins),
                         ...(isServerFunctionsEnabled ? [serverFunctions.client()] : []),
                         react(reactOptions),
                         config("app-client", {
                             resolve: {
+                                ...userConfig.resolve,
                                 alias: {
                                     "#quyx/app": join(process.cwd(), quyx.appRoot, `app.tsx`),
                                     "#quyx/router": join(process.cwd(), quyx.appRoot, `entry-router.tsx`),
@@ -88,11 +99,22 @@ export const defineConfig = (baseOptions: ConfigOptions = {}) => {
                 target: "server",
                 plugins: async () => {
                     return [
-                        config("user", userConfig),
+                        config("user", {
+                            ...userConfig,
+                            optimizeDeps: {
+                                ...(userConfig.optimizeDeps || {}),
+                                exclude: [
+                                    ...(userConfig.optimizeDeps?.exclude || []),
+                                    '#quyx/app',
+                                    '#quyx/router'
+                                ]
+                            }
+                        }),
                         ...(typeof plugins === "function" ? [...(await (plugins as any)())] : plugins),
                         react(reactOptions),
                         config("app-server", {
                             resolve: {
+                                ...userConfig.resolve,
                                 alias: {
                                     "#quyx/app": join(process.cwd(), quyx.appRoot, `app.tsx`),
                                     "#quyx/router": join(process.cwd(), quyx.appRoot, `entry-router.tsx`),
@@ -113,11 +135,22 @@ export const defineConfig = (baseOptions: ConfigOptions = {}) => {
                 [serverFunctions.router({
                     plugins: async () => {
                         return [
-                            config("user", userConfig),
+                            config("user", {
+                                ...userConfig,
+                                optimizeDeps: {
+                                    ...(userConfig.optimizeDeps || {}),
+                                    exclude: [
+                                        ...(userConfig.optimizeDeps?.exclude || []),
+                                        '#quyx/app',
+                                        '#quyx/router'
+                                    ]
+                                }
+                            }),
                             ...(typeof plugins === "function" ? [...(await (plugins as any)())] : plugins),
                             react(reactOptions),
                             config("app-server", {
                                 resolve: {
+                                    ...userConfig.resolve,
                                     alias: {
                                         "#quyx/app": join(process.cwd(), quyx.appRoot, `app.tsx`),
                                         "#quyx/router": join(process.cwd(), quyx.appRoot, `entry-router.tsx`),
