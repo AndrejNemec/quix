@@ -1,6 +1,6 @@
-# Quix ("kwix") 🚀
+# Quyx ("kwix") 🚀
 
-Quix, pronounced "kwix", is a cutting-edge React framework designed to simplify the development process for web applications. Leveraging the power of Vite, Vinxi, and tanstack/router, Quix is engineered to support a wide range of web applications, from server-side rendered (SSR) to single-page applications (SPA) 🌐. It also introduces support for Server Functions, allowing for a more integrated and efficient development workflow 🛠️.
+Quyx, pronounced "kwix", is a cutting-edge React framework designed to simplify the development process for web applications. Leveraging the power of Vite, Vinxi, and tanstack/router, Quyx is engineered to support a wide range of web applications, from server-side rendered (SSR) to single-page applications (SPA) 🌐. It also introduces support for Server Functions, allowing for a more integrated and efficient development workflow 🛠️.
 
 ## Features 🌟
 
@@ -8,14 +8,14 @@ Quix, pronounced "kwix", is a cutting-edge React framework designed to simplify 
 - **Built on Vite**: Experience ultra-fast Hot Module Replacement (HMR) for a more efficient development cycle ⚡.
 - **Vinxi Integration**: Take advantage of Vinxi's capabilities for an enhanced routing experience 🚦.
 - **Tanstack/Router**: Utilize the flexible and powerful routing provided by tanstack/router to manage your application's navigation seamlessly 🧭.
-- **Server Functions**: Implement server-side logic directly within your Quix applications, enabling a more cohesive development process 🖥️.
+- **Server Functions**: Implement server-side logic directly within your Quyx applications, enabling a more cohesive development process 🖥️.
 
 ## Getting Started 🚀
 
-To create a new Quix project, run the following command:
+To create a new Quyx project, run the following command:
 
 \`\`\`bash
-$ pnpm create quix-starter
+$ pnpm create quyx-starter
 \`\`\`
 
-This command sets up a new Quix application with a default template, so you can start building right away 🏗️.
+This command sets up a new Quyx application with a default template, so you can start building right away 🏗️.

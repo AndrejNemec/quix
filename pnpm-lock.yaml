@@ -24,9 +24,9 @@ importers:
       '@tanstack/router-devtools':
         specifier: ^1.15.23
         version: 1.15.23(react-dom@0.0.0-experimental-035a41c4e-20230704)(react@0.0.0-experimental-035a41c4e-20230704)
-      quix:
+      quyx:
         specifier: workspace:*
-        version: link:../../packages/quix
+        version: link:../../packages/quyx
       react:
         specifier: 0.0.0-experimental-035a41c4e-20230704
         version: 0.0.0-experimental-035a41c4e-20230704
@@ -50,7 +50,7 @@ importers:
         specifier: ^18.2.19
         version: 18.2.19
 
-  packages/create-quix:
+  packages/create-quyx:
     devDependencies:
       '@babel/core':
         specifier: ^7.17.5
@@ -98,7 +98,7 @@ importers:
         specifier: ^21.0.1
         version: 21.1.1
 
-  packages/quix:
+  packages/quyx:
     dependencies:
       '@picocss/pico':
         specifier: ^1.5.11

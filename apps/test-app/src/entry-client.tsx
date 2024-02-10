@@ -1,5 +1,5 @@
 import { RouterProvider } from '@tanstack/react-router'
-import { createClient } from 'quix/client'
+import { createClient } from 'quyx/client'
 
 createClient(async (router) => {
     return (

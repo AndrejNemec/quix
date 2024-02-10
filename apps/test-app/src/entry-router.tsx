@@ -1,5 +1,5 @@
 import { RouterHistory, createBrowserHistory, createMemoryHistory, createRouter } from '@tanstack/react-router'
-import { RouterHandlerOptions, createRouterHandler } from 'quix/router'
+import { RouterHandlerOptions, createRouterHandler } from 'quyx/router'
 import { routeTree } from './routeTree.gen'
 
 

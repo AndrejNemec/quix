@@ -1,1 +1,0 @@
-export const SPA_WRAPPER_ID = '__quix__'

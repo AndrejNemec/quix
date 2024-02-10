@@ -1,4 +1,4 @@
-import { Meta, Scripts } from 'quix'
+import { Meta, Scripts } from 'quyx'
 import type { ReactNode } from 'react'
 
 interface AppProps {

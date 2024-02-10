@@ -1,6 +1,6 @@
 {
-  "name": "quix",
-  "description": "Quix is a modern web framework for building SPA/SSR React applications.",
+  "name": "quyx",
+  "description": "Quyx is a modern web framework for building SPA/SSR React applications.",
   "private": true,
   "scripts": {
     "build": "turbo build",

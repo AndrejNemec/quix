@@ -1,8 +1,8 @@
-import { defineConfig } from 'quix/config'
+import { defineConfig } from 'quyx/config'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 
 export default defineConfig({
-    quix: {
+    quyx: {
         ssr: true
     },
     plugins: [TanStackRouterVite()],

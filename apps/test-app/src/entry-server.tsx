@@ -1,5 +1,5 @@
 import { RouterProvider } from '@tanstack/react-router'
-import { createServerHandler } from 'quix/server'
+import { createServerHandler } from 'quyx/server'
 
 export default createServerHandler(async (router) => {
     return (
